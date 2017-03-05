@@ -117,3 +117,44 @@ new_im.save("InputImages/Maze1.jpg")
 imageload = "InputImages/Maze1.jpg"
 
 levelDetector(imageload, boardrows, boardcols, scale, imageoutput)
+
+
+boardcols = 509
+boardrows = 381
+scale = 1
+
+#Linux Path
+imageload = "InputImages/Maze2.gif"
+imageoutput = "OutputImages/Maze2.png"
+#transform gif to jpg
+
+img = Image.open(imageload)
+new_im = Image.new("RGB", img.size)
+new_im.paste(img)
+
+new_im.save("InputImages/Maze2.jpg")
+
+imageload = "InputImages/Maze2.jpg"
+
+levelDetector(imageload, boardrows, boardcols, scale, imageoutput)
+
+
+boardcols = 584
+boardrows = 584
+scale = 1
+
+#Linux Path
+imageload = "InputImages/Maze3.gif"
+imageoutput = "OutputImages/Maze3.png"
+#transform gif to jpg
+
+img = Image.open(imageload)
+new_im = Image.new("RGB", img.size)
+new_im.paste(img)
+
+new_im.save("InputImages/Maze3.jpg")
+
+imageload = "InputImages/Maze3.jpg"
+
+levelDetector(imageload, boardrows, boardcols, scale, imageoutput)
+
