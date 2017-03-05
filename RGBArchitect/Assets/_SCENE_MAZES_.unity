@@ -119,13 +119,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelFileName:
-  - Level 1.png
-  - Level 2.png
-  - Level 3.png
-  - Level 4.png
-  - Level 5.png
-  pack: Levels
-  currentLevel: 4
+  - Maze1.png
+  - Maze2.png
+  - Maze3.png
+  pack: Mazes
+  currentLevel: 2
   colorToPrefab:
   - color:
       serializedVersion: 2
@@ -228,7 +226,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.5
+  orthographic size: 16
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
