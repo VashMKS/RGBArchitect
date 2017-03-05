@@ -5,8 +5,12 @@ boardcols = 21
 boardrows = 17
 scale = 6
 
-imageload = "C:/Unity/Projects/RGBArchitect/ImageDetection/InputImages/Level 4.jpg"
-imageoutput = "C:/Unity/Projects/RGBArchitect/ImageDetection/OutputImages/Level 4.png"
+#imageload = "C:/Unity/Projects/RGBArchitect/ImageDetection/InputImages/Level 4.jpg"
+#imageoutput = "C:/Unity/Projects/RGBArchitect/ImageDetection/OutputImages/Level 4.png"
+
+imageload = "InputImages/Level 4.jpg"
+imageoutput = "OutputImages/Level 4.png"
+
 levelDetector(imageload, boardrows, boardcols, scale, imageoutput)
 
 
@@ -14,8 +18,12 @@ boardcols = 21
 boardrows = 17
 scale = 2
 
-imageload = "C:/Unity/Projects/RGBArchitect/ImageDetection/InputImages/Level 5.jpg"
-imageoutput = "C:/Unity/Projects/RGBArchitect/ImageDetection/OutputImages/Level 5.png"
+#imageload = "C:/Unity/Projects/RGBArchitect/ImageDetection/InputImages/Level 5.jpg"
+#imageoutput = "C:/Unity/Projects/RGBArchitect/ImageDetection/OutputImages/Level 5.png"
+
+imageload = "InputImages/Level 5.jpg"
+imageoutput = "OutputImages/Level 5.png"
+
 levelDetector(imageload, boardrows, boardcols, scale, imageoutput)
 
 
@@ -23,8 +31,12 @@ boardcols = int(730/5)
 boardrows = int(300/5)
 scale = 1
 
-imageload = "C:/Unity/Projects/RGBArchitect/ImageDetection/InputImages/RNG1.jpg"
-imageoutput = "C:/Unity/Projects/RGBArchitect/ImageDetection/OutputImages/RNG1.png"
+#imageload = "C:/Unity/Projects/RGBArchitect/ImageDetection/InputImages/RNG1.jpg"
+#imageoutput = "C:/Unity/Projects/RGBArchitect/ImageDetection/OutputImages/RNG1.png"
+
+imageload = "InputImages/RNG1.jpg"
+imageoutput = "OutputImages/RNG1.png"
+
 levelDetector(imageload, boardrows, boardcols, scale, imageoutput)
 
 
