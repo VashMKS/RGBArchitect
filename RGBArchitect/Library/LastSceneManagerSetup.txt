@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_SCENE_BITMAP_.unity
+- path: Assets/_SCENE_MAZES_.unity
   isLoaded: 1
   isActive: 1

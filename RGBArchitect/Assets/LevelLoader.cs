@@ -22,13 +22,14 @@ public class LevelLoader : MonoBehaviour {
 
 	public ColorToPrefab[] colorToPrefab;
 
+	void Awake() {
+		// Create a map linking each of our used colors to the assigned prefab
+		foreach (ColorToPrefab ctb in colorToPrefab) map [ctb.color] = ctb.prefab;
+	}
+
 	// Inicialization
 	void Start () {
 		// Constructor
-
-		// Create a map linking each Color32 to the assigned prefab
-		foreach (ColorToPrefab ctb in colorToPrefab) map [ctb.color] = ctb.prefab;
-
 		numberOfLevels = levelFileName.Length;
 		LoadMap(currentLevel);
 	}
@@ -43,13 +44,16 @@ public class LevelLoader : MonoBehaviour {
 	}
 
 	// Loads the current level
-	void LoadMap(int _level) {
+	void LoadMap(int level) {
 		// clear the current level
 		EmptyMap();
-		// Debug.Log ("Welcome to level " + this.currentLevel);
 
-		// Read the image data from the file in StreamingAssets
-		string filePath = Application.dataPath + "/StreamingAssets/" + pack + "/" + levelFileName[_level];
+		// Set a stopwatch to test render times
+		System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch ();
+		sw.Start ();
+
+		// Read the image data from the correct folder in StreamingAssets
+		string filePath = Application.dataPath + "/StreamingAssets/" + pack + "/" + levelFileName[level];
 		byte[] bytes = System.IO.File.ReadAllBytes(filePath);
 		Texture2D levelMap = new Texture2D(2, 2);
 		levelMap.LoadImage(bytes);
@@ -67,6 +71,9 @@ public class LevelLoader : MonoBehaviour {
 
 			}
 		}
+
+		sw.Stop ();
+		Debug.Log ("Render time: " + sw.ElapsedMilliseconds/1000f);
 	}
 
 	void SpawnTileAt( Color32 c, int x, int y ) {
@@ -74,6 +81,8 @@ public class LevelLoader : MonoBehaviour {
 		// If this is a transparent pixel, then it's meant to just be empty.
 		// Depending on our image processing we might want to ignore pure white pixels too
 		if (c.a <= 0) 
+			return;
+		if (c == Color.white)
 			return;
 
 		// Find the right color in our color->prefab map
@@ -85,13 +94,9 @@ public class LevelLoader : MonoBehaviour {
 			return;
 		}
 
-		// This is the old method for assigning a prefab, without maps (much slower, but works)
 		/*
-		if (c == Color.white)
-			return;
-
+		// This is the old method for assigning a prefab, without maps (much slower, but works)
 		// Find the right color in our color->prefab map
-
 		// NOTE: This isn't optimized. You should have a dictionary lookup for max speed
 		foreach(ColorToPrefab ctp in colorToPrefab) {
 			
