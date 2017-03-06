@@ -121,8 +121,9 @@ MonoBehaviour:
   levelFileName:
   - RNG1.png
   - RNG2.png
+  - RNG3.png
   pack: Random
-  currentLevel: 1
+  currentLevel: 2
   colorToPrefab:
   - color:
       serializedVersion: 2

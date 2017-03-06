@@ -125,7 +125,7 @@ MonoBehaviour:
   - Level 4.png
   - Level 5.png
   pack: Levels
-  currentLevel: 4
+  currentLevel: 3
   colorToPrefab:
   - color:
       serializedVersion: 2

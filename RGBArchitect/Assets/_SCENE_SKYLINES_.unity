@@ -123,8 +123,7 @@ MonoBehaviour:
   - BCN.png
   - NY.png
   pack: Skylines
-  numberOfLevels: 3
-  currentLevel: 1
+  currentLevel: 2
   colorToPrefab:
   - color:
       serializedVersion: 2

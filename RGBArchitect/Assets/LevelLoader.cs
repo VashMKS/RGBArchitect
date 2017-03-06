@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+
 
 [System.Serializable]
 public class ColorToPrefab {
@@ -8,6 +10,9 @@ public class ColorToPrefab {
 }
 
 public class LevelLoader : MonoBehaviour {
+
+	// attempt to make a dictionary for faster lookup on color->prefab
+	private Dictionary<Color32, GameObject> map = new Dictionary<Color32, GameObject> ();
 
 	public string[] levelFileName;
 	public string pack;
@@ -20,6 +25,10 @@ public class LevelLoader : MonoBehaviour {
 	// Inicialization
 	void Start () {
 		// Constructor
+
+		// Create a map linking each Color32 to the assigned prefab
+		foreach (ColorToPrefab ctb in colorToPrefab) map [ctb.color] = ctb.prefab;
+
 		numberOfLevels = levelFileName.Length;
 		LoadMap(currentLevel);
 	}
@@ -67,6 +76,17 @@ public class LevelLoader : MonoBehaviour {
 		if (c.a <= 0) 
 			return;
 
+		// Find the right color in our color->prefab map
+		if (map.ContainsKey (c)) {
+			// Spawn the prefab at the right location
+			GameObject go = (GameObject)Instantiate (map [c], new Vector3 (x, y, 0), Quaternion.identity);
+			go.transform.SetParent (this.transform);
+			// maybe do more stuff to the gameobject here?
+			return;
+		}
+
+		// This is the old method for assigning a prefab, without maps (much slower, but works)
+		/*
 		if (c == Color.white)
 			return;
 
@@ -83,6 +103,7 @@ public class LevelLoader : MonoBehaviour {
 				return;
 			}
 		}
+		*/
 
 		// If we got to this point, it means we did not find a matching color in our array.
 
@@ -90,7 +111,7 @@ public class LevelLoader : MonoBehaviour {
 
 	}
 
-	// Our end points send a message to call the end of a level
+	// load the next level (or the first one if it was the last) on the list
 	public void EndCurrentLevel () {
 		// load the next level (or the first one if it was the last) on the list
 		currentLevel = (currentLevel + 1)%numberOfLevels;
