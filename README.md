@@ -18,21 +18,21 @@ Magenta	[255,0,255]	goal/end of level
 Cyan	[0,255,255]	coin (placeholder)  
 White	[255,255,255]	empty space/background  
 
-The Unity LevelLoader class will interpret any png image following the above criteria and start a new game, making room for some awesome trickery (see the imported Skyline of Barcelona, Minnessota or NY ploted onto the Game View or toy with images that were not intended as level maps like the RNG pack). Also, if you're into that kind of thing you can choose to design your levels pixel by pixel using any image edition software such as Ps or GIMP (or MSPaint!) and go MUCH deeper into level generation and design by making your own prefabs or using slightly different values of RGB for a much more wide variety of prefabs (for instance, use pure Red[255,0,0] for the base version of an enemy AI and [255,0,x] for as many slightly different variations of it!).
+The Unity LevelLoader class will interpret any png image following the above criteria and start a new game, making room for some awesome trickery (see the imported Skyline of Barcelona, Minnessota or NY ploted onto the Game View or toy with images that were not intended as level maps like the RNG pack). Also, if you're into that kind of stuff you can choose to design your levels pixel by pixel using any image edition software such as Ps or GIMP (or MSPaint!) and go much deeper into level generation and design by making your own prefabs or using slightly different values of RGB for a wider variety of prefabs (for instance, use pure Red[255,0,0] for the base version of an enemy AI and [255,0,x] for as many slightly different variations of it!).
 
-Moving ahead we've already thought on giving different options for AIs (both for Player and mobs), completing the basic game with things like health bars, scorekeeping(customizable?) or support for more than one Player at a time in the same level. Also fixing some issues (like some terribad algorithm efficiency hurting performance here and there).
+Moving ahead we've already thought on giving different options for AIs (both for Player and mobs), completing the basic game with things like health bars, scorekeeping or support for more than one Player at a time in the same level. Also fixing some issues (like some terribad algorithm efficiency hurting performance here and there).
 
-On a side note, we just realized this is a pretty powerful tool for rendering really cool pixel art (you can also play a game on top of your favourite pieces!).
+On a side note, we just realized this is a pretty cool tool for rendering pixel art (you can also play a game on top of your favourite pieces!).
 
-Finally, HUGE shoutouts to quill18 for his tutorials and being the source of some of the free assets and code snippets we used when starting with this.
+Finally, huge shoutouts to quill18 for his tutorials and being the source of some of the free assets and code snippets we used when starting with this.
 
 Image Recognition Version 0.9a
 
-The reason we want our colors as different as possible is so the second part of this project works better. You'll notice a folder named ImageDetection containing a bunch of python scripts and input/output folders. The ultimate goal of this project is to create a Computer Vision algorithm that takes pictures of handwritten sketches for levels and outputs a readable png image that our Unity interpreter can instantly make into a playable 2D Scene! (You know, it's an architect, he looks at sketches then build things, get it? ... sigh)
+The reason we want our colors as different as possible is so the second part of this project works better. You'll notice a folder named ImageDetection containing a bunch of python scripts and input/output folders. The ultimate goal of this project is to create a Computer Vision algorithm that takes pictures of handwritten sketches for levels and outputs a readable png image that our Unity interpreter can instantly make into a playable 2D Scene!
 
 Current version of the CV algorithm assumes a bunch of limitations and restrictions from the pictures it takes, such as knowing from beforehand the width and height of the target png image and very low to no inclination of the pictures. Both of those restrictions can very easily be taken out, we just didn't have the time for them at the hackathon.
 
-Looking at future versions, we could use some reference points on the corners (like in QR codes) of the sketches so we can try making it much more flexible and fix things like paper bending and weird camera angles. Code needs some cleansing and whatsoever (you know by now).
+Looking at future versions, we could use some reference points on the corners (like in QR codes) of the sketches so we can try making it more flexible and fix things like paper bending and weird camera angles.
 
 And that's it! Thanks for going all the way to the bottom of this document, hope you enjoy RBG Architect as much as we did building it!
 
