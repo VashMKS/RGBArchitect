@@ -9,14 +9,14 @@ So, what does RGBArch do? Well it makes level design, prototyping and testing IN
 
 Currently we use 8 different colors for 8 different prefabs, the colors being as separated as possible from each other (consider RGB colors as 3D vectors with a byte worth of info in each coordinate) in the RGB space. Those are: 
 
-Black	[0,0,0]		simple terrain prefab
-Red	[255,0,0]	simple enemy mob (no AI yet, it's a snail)
-Green	[0,255,0]	player spawn
-Blue	[0,0,255]	object boxes (currently decoration)
-Yellow	[255,255,0]	coin
-Magenta	[255,0,255]	goal/end of level
-Cyan	[0,255,255]	coin (placeholder)
-White	[255,255,255]	empty space/background
+Black	[0,0,0]		simple terrain prefab  
+Red	[255,0,0]	simple enemy mob (no AI yet, it's a snail)  
+Green	[0,255,0]	player spawn  
+Blue	[0,0,255]	object boxes (currently decoration)  
+Yellow	[255,255,0]	coin  
+Magenta	[255,0,255]	goal/end of level  
+Cyan	[0,255,255]	coin (placeholder)  
+White	[255,255,255]	empty space/background  
 
 The Unity LevelLoader class will interpret any png image following the above criteria and start a new game, making room for some awesome trickery (see the imported Skyline of Barcelona, Minnessota or NY ploted onto the Game View or toy with images that were not intended as level maps like the RNG pack). Also, if you're into that kind of thing you can choose to design your levels pixel by pixel using any image edition software such as Ps or GIMP (or MSPaint!) and go MUCH deeper into level generation and design by making your own prefabs or using slightly different values of RGB for a much more wide variety of prefabs (for instance, use pure Red[255,0,0] for the base version of an enemy AI and [255,0,x] for as many slightly different variations of it!).
 
