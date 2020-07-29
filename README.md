@@ -36,5 +36,6 @@ Looking at future versions, we could use some reference points on the corners (l
 
 And that's it! Thanks for going all the way to the bottom of this document, hope you enjoy RBG Architect as much as we did building it!
 
-Raquel L. Pérez Arnal
-Dídac Fernández Cadenas
+Raquel L. Pérez Arnal ([RaquelLeandra](https://github.com/RaquelLeandra) on GitHub)
+
+Dídac Fernández Cadenas ([VashMKS](https://github.com/VashMKS) on GitHub)
