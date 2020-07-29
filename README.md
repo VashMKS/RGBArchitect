@@ -1,11 +1,11 @@
 # RGBArchitect
 HackUPC 2017 Winter Demo
 
-RGB Architect is a simple 2D platformer game with the purpose of making level design and prototyping in a 2D environment a very easy, dynamic and fun task.
+RGB Architect is a tool to generate playable levels of a simple 2D platformer game from any image (e.g. a sketch in a notebook). Please bear in mind that this has been the result of 36h hours of rush coding at a hackathon by two math degree students when you think about the (multiple) flaws the project has.
 
-This environment is meant as a tool rather than as an entertaining piece itself as it's simplicity shows. Also please bear in mind that this has been the result of 36h hours of rush coding at a hackathon by two math degree students when you think about the (multiple) flaws the game still has.
+RGBArch makes level design, prototyping and testing fast and easy. How? The first part of the project uses Unity scripts to import a fully playable level in seconds from a small image. It does so by identifying the RGB values of the pixels and matching them with a game object in the Unity project. At runtime, it spawns the correct prefabs (units, terrain, sprites and game objects in general) at the right coordinates making the "level map" playable in seconds. This is essentially a way to store/compress the whole level layout in a very small image. The second part of the project is what maks it interesting: we crafted a simple Python computer vision algorithm that takes a picture, any picture, and translates it into a small PNG image that can be interpreted by the architect. This allows you to **sketch a level on a piece of paper, take a picture, upload it, and play and start playing right away!**
 
-So, what does RGBArch do? Well it makes level design, prototyping and testing INSANELY fast and easy. How? In it's current form this project imports a fully playable level in mere seconds from a small png image. It does so by identifying the RGB values (hence the name :P) of the pixels and matching them with a game object in the Unity project. At runtime, it spawns the correct prefabs (units, terrain, sprites and game objects in general) at the right coordinates making the "level map" playable in seconds.
+## Level Loader
 
 Currently we use 8 different colors for 8 different prefabs, the colors being as separated as possible from each other (consider RGB colors as 3D vectors with a byte worth of info in each coordinate) in the RGB space. Those are: 
 
@@ -18,13 +18,9 @@ Magenta	[255,0,255]	goal/end of level
 Cyan	[0,255,255]	coin (placeholder)  
 White	[255,255,255]	empty space/background  
 
-The Unity LevelLoader class will interpret any png image following the above criteria and start a new game, making room for some awesome trickery (see the imported Skyline of Barcelona, Minnessota or NY ploted onto the Game View or toy with images that were not intended as level maps like the RNG pack). Also, if you're into that kind of stuff you can choose to design your levels pixel by pixel using any image edition software such as Ps or GIMP (or MSPaint!) and go much deeper into level generation and design by making your own prefabs or using slightly different values of RGB for a wider variety of prefabs (for instance, use pure Red[255,0,0] for the base version of an enemy AI and [255,0,x] for as many slightly different variations of it!).
+The Unity LevelLoader class will interpret any png image including only the above colors and start a new game right away. The fun part is that you can throw *anything* at it, making room for some awesome trickery (see the [assets](https://github.com/VashMKS/RGBArchitect/tree/master/RGBArchitect/Assets/StreamingAssets) like the Skyline of Barcelona, Minnessota and NY ploted onto the Game View or toy with images that were not intended as level maps like the RNG pack). Also, if you're into that kind of stuff you can choose to design your levels pixel by pixel using any image edition software such as Photoshop, GIMP or MSPaint and go much deeper into level generation and design by making your own prefabs or using slightly different values of RGB for a wider variety of prefabs (for instance, use pure Red[255,0,0] for the base version of an enemy AI and [255,0,x] for as many slightly different variations of it!). Or simply turn your favourite pixel art into a playable level!
 
-Moving ahead we've already thought on giving different options for AIs (both for Player and mobs), completing the basic game with things like health bars, scorekeeping or support for more than one Player at a time in the same level. Also fixing some issues (like some terribad algorithm efficiency hurting performance here and there).
-
-On a side note, we just realized this is a pretty cool tool for rendering pixel art (you can also play a game on top of your favourite pieces!).
-
-Finally, huge shoutouts to [quill18](https://www.youtube.com/channel/UCbx1TZgxfIauUZyPuBzEwZg) for his tutorials and being the source of some of the free assets and code snippets we used when starting with this.
+We would like to give huge shoutouts to [quill18](https://www.youtube.com/channel/UCbx1TZgxfIauUZyPuBzEwZg) for his Unity tutorials and being the source of some of the free assets and code snippets we used when starting with this.
 
 ## Image Recognition
 
