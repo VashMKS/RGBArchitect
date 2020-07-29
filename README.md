@@ -1,4 +1,4 @@
-# RGBArchitect Version 0.8a
+# RGBArchitect
 HackUPC 2017 Winter Demo
 
 RGB Architect is a simple 2D platformer game with the purpose of making level design and prototyping in a 2D environment a very easy, dynamic and fun task.
@@ -24,9 +24,9 @@ Moving ahead we've already thought on giving different options for AIs (both for
 
 On a side note, we just realized this is a pretty cool tool for rendering pixel art (you can also play a game on top of your favourite pieces!).
 
-Finally, huge shoutouts to quill18 for his tutorials and being the source of some of the free assets and code snippets we used when starting with this.
+Finally, huge shoutouts to [quill18](https://www.youtube.com/channel/UCbx1TZgxfIauUZyPuBzEwZg) for his tutorials and being the source of some of the free assets and code snippets we used when starting with this.
 
-Image Recognition Version 0.9a
+## Image Recognition
 
 The reason we want our colors as different as possible is so the second part of this project works better. You'll notice a folder named ImageDetection containing a bunch of python scripts and input/output folders. The ultimate goal of this project is to create a Computer Vision algorithm that takes pictures of handwritten sketches for levels and outputs a readable png image that our Unity interpreter can instantly make into a playable 2D Scene!
 
